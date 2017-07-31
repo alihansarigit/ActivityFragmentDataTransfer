@@ -19,6 +19,16 @@ public class MainActivity extends AppCompatActivity implements MenuListFragment.
         txt = (TextView) findViewById(R.id.txt);
     }
 
+    /**
+     * Fragment ta tanımladığımız interface i kullanarak veriyi alacağımız ve bu veriyi kullanacağımız
+     * yer burası olduğu için OnFragmentInteractionListener ı imlemente ederek
+     * onFragmentInteraction metodunu kullanabilmek için gerekli olan ortamı hazırladık.
+     *
+     * Aldığımız name parametresi bizim fragment tan gelen verimizi String türünde tutmakta.
+     * biz bu parametreyi istediğimiz şekilde bu metodun içinde kullanabiliriz.
+     * @param name
+     */
+
     @Override
     public void onFragmentInteraction(String name) {
         txt.setText(name);

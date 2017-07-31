@@ -68,7 +68,7 @@ public class MenuListFragment extends Fragment implements View.OnClickListener {
         View view=inflater.inflate(R.layout.fragment_menu_list,container,false);
          edtText=view.findViewById(R.id.edtText);
         Button btn=view.findViewById(R.id.btn);
-        edtText.setText("Kuru Fasulye");
+        edtText.setHint("Ana Yemek");
         btn.setOnClickListener(this);
         return view;
     }
@@ -80,6 +80,11 @@ public class MenuListFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /**
+     * onAttach metodu ile OnFragmentInteractionListener dan oluşturduğumuz mListener nesnesi için
+     * @param context parametresi alınır ve bu parametre bizim gönderdiğimiz veriyi tutar.
+     * sonrasında değişkeni OnFragmentInteractionListener türüne cast eder ve Interface i tanımladığımız yere yani aşağıya gönderir.(mListener ile)
+     */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -90,6 +95,8 @@ public class MenuListFragment extends Fragment implements View.OnClickListener {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+
+
 
     @Override
     public void onDetach() {
@@ -103,15 +110,13 @@ public class MenuListFragment extends Fragment implements View.OnClickListener {
     }
 
     /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
+     *  context değişkeninin cast edilip interface e gönderilmesi ile bu metoda gelir
+     *  burada sadece tanımlama işlemi yapılır. Asıl kullanılacağı yerde içinde çalışacak metodlar veya fonksiyonlar yazılır.
+     *
      */
+
+
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(String name);
